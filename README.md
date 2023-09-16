@@ -1,4 +1,4 @@
-# cristi-cosulianu.github.io
+# Andreea Palote Mua Website
 
 1.) Build the project with `ng build`.
 
