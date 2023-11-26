@@ -1,0 +1,126 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+$andreea-primary-palette: (
+  50: #f5e6e9,
+  100: #e8c2c6,
+  200: #ca898a,
+  300: #b25e5f,
+  400: #B43E3E,
+  500: #B12B26,
+  600: #A42325,
+  700: #941C20,
+  800: #86171A,
+  900: #771012,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+
+$andreea-secondary-palette: (
+  50: #f5e6e9,
+  100: #e8c2c6,
+  200: #ca898a,
+  300: #b25e5f,
+  400: #B43E3E,
+  500: #B12B26,
+  600: #A42325,
+  700: #6F635B,
+  800: #4f443c,
+  900: #2c231c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// $primaryColor: #771011;
+// $secondaryColor: #6F635B;
+// $neutralColor: #C0BFB2;
+// $clearColor: #ECE6D3;
+// $darkColor: #221712;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$andreea-palote-mua-website-primary: mat.define-palette($andreea-primary-palette);
+$andreea-palote-mua-website-accent: mat.define-palette($andreea-secondary-palette);
+
+// The warn palette is optional (defaults to red).
+$andreea-palote-mua-website-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$andreea-palote-mua-website-theme: mat.define-light-theme((
+  color: (
+    primary: $andreea-palote-mua-website-primary,
+    accent: $andreea-palote-mua-website-accent,
+    warn: $andreea-palote-mua-website-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($andreea-palote-mua-website-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+/* for sidenav to take a whole page */
+html, body { 
+    margin: 0;
+    height: 100%;
+}body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
