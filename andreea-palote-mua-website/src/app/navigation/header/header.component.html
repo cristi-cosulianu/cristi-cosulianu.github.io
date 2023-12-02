@@ -1,9 +1,20 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <img class="logo" src="../../../assets/AndreeaPaloteLogo.jpeg">
-        <span class="spacer"></span>
-        <button mat-icon-button (click)="toggleSidenav()">
-            <mat-icon fontIcon="menu" color="white"></mat-icon>
-        </button>
-    </mat-toolbar-row>
+    <!-- Needed in order to keep it as first row -->
+    <ng-container>
+        <mat-toolbar-row>
+            <img class="logo" src="../../../assets/AndreeaPaloteLogo.jpeg">
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="toggleSidenav()">
+                <mat-icon *ngIf="!toggled" fontIcon="menu" color="white"></mat-icon>
+                <mat-icon *ngIf="toggled" fontIcon="close" color="white"></mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </ng-container>
+    <!-- The only way to apply both ngIf & ngFor on a component -->
+    <!-- https://angular.io/guide/structural-directives#one-structural-directive-per-element -->
+    <ng-container *ngIf="toggled">
+        <mat-toolbar-row *ngFor="let menu of menus">
+            <p>{{menu}}</p>
+        </mat-toolbar-row>
+    </ng-container>
 </mat-toolbar>
