@@ -17,6 +17,11 @@ a:hover, a:active{
     margin: 0;
 }
 
+.logo{
+    height: inherit;
+    background-color: aqua;
+}
+
 mat-toolbar{
     border-radius: 3px;
 }
